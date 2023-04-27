@@ -33,21 +33,22 @@ namespace _3._2._2_ProgrammingConcepts
             string newString = Console.ReadLine();
             // Non string inputs
             Console.Write("Enter a number: ");
-            num = int.Parse(Console.ReadLine());
+            num = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter a single character: ");
-            char c = char.Parse(Console.ReadLine());
+            char c =Convert.ToChar (Console.ReadLine());
             Console.Write("Enter a floating point number: ");
-            double d = double.Parse(Console.ReadLine());
+            double d = Convert.ToDouble (Console.ReadLine());
             //• iteration
             // for loops
             //
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++) // 0 to 9 counting up
             {
                 Console.WriteLine(i);
             }
+           
             //User input to guide number of times to loop
             Console.Write("Enter how many times to loop: ");
-            num = int.Parse(Console.ReadLine());
+            num = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= num; i++)
             {
                 Console.WriteLine(i);
@@ -55,12 +56,12 @@ namespace _3._2._2_ProgrammingConcepts
             //Loop with diferent increment
             for (int i = 0; i <= 100; i += 10)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(i); // adding 10 each time it loops
             }
             //Loop down
             for (int i = 10; i > 0; i--)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(i); // counting down from 10 to 1
             }
             // Condition controlled looping
             num = 10;
@@ -73,11 +74,34 @@ namespace _3._2._2_ProgrammingConcepts
             {
                 num -= 2;
             }while (num > 0);
+            
             // Nested iteration
             bool found = false;
+            int counter = 0;
             while (!found)
             {
+                for (int i = 0;i<10;i++)
+                {
+                    Console.WriteLine(i);
+                }
+                counter++;
+                if (counter == 10)
+                {
+                    found = true;
+                }
+            }
 
+            for (int i = 0; i<10; i++) {
+                found = false;
+                while (!found)
+                {
+                    Console.WriteLine("Enter a number: ");
+                    num = Convert.ToInt32(Console.ReadLine());
+                    if (num == i)
+                    {
+                        found = true;
+                    }
+                }
             }
             //• selection
             // if(criteria){ thing to do }
